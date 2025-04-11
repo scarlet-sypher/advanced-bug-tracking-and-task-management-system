@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="src/output.css">
+
+   <style>
+      /* Position the span */
+
+
+      /* Reset the <span> position */
+      nav span {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 95px;
+         height: 100%;
+         background: linear-gradient(45deg, #19264f, #3399ff);
+
+         border-radius: 8px;
+         transition: all 0.5s ;
+      }
+
+      /* On hover, move the span and change its width */
+      nav a:nth-child(1):hover ~ span {
+         left: 0;
+         width: 95px;
+      }
+      nav a:nth-child(2):hover ~ span {
+         left: 95px;
+         width: 95px;
+      }
+      nav a:nth-child(3):hover ~ span {
+         left: 190px;
+         width: 110px;
+      }
+      nav a:nth-child(4):hover ~ span {
+         left: 280px;
+         width: 115px;
+      }
+      nav a:nth-child(5):hover ~ span {
+         left: 395px;
+         width: 100px;
+      }
+   </style>
+</head>
+<body class="flex bg-black justify-center items-center min-h-screen">
+
+   <nav class="relative w-[524px] h-[50px] bg-black flex justify-center items-center">
+      <a href="#" class="relative inline-block font-bold text-white px-[23px] py-0 z-1">Home</a>
+      <a href="#" class="relative inline-block font-bold text-white px-[23px] py-0 z-1">About</a>
+      <a href="#" class="relative inline-block font-bold text-white px-[23px] py-0 z-1">Product</a>
+      <a href="#" class="relative inline-block font-bold text-white px-[23px] py-0 z-1">Service</a>
+      <a href="#" class="relative inline-block font-bold text-white px-[23px] py-0 z-1">Contact</a>
+
+      <!-- The span that will change on hover -->
+      <span></span>
+   </nav>
+
+</body>
+</html>

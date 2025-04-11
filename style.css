@@ -1,0 +1,544 @@
+/* ======================================================== porfile Dropdown effect  starts=========================================================================================== */
+
+/* For dropdown of profile */
+.dropdown-list::after {
+    content: '';
+    width: 1rem;               /* w-4 */
+    height: 1rem;              /* h-4 */
+    background-color: #0f172a; /* bg-slate-900 */
+    position: absolute;        /* absolute */
+    top: -0.5rem;              /* top-[-8px] */
+    left: 0;
+    right: 0;
+    margin-left: auto;        /* mx-auto */
+    margin-right: auto;       /* mx-auto */
+    transform: rotate(-45deg);/* rotate-[-45deg] */
+}
+.dropdown-list {
+    z-index: 100;
+}
+
+/* ======================================================== porfile Dropdown effect  ends =========================================================================================== */
+
+
+
+/* ========================================================  navigation bar hover effect fully responsive starts  =========================================================================================== */
+
+.nav-hover-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(45deg, #19264f, #3399ff);
+    border-radius: 8px;
+    transition: all 0.5s;
+    z-index: 1;
+}
+
+/* Hover effects for desktop menu */
+@media (min-width: 768px) {
+    /* On hover, move the span and change its width based on the link */
+    .nav-menu ul li:nth-child(1):hover ~ .nav-hover-indicator {
+        left: 0;
+        width: 90px;
+    }
+    
+    .nav-menu ul li:nth-child(2):hover ~ .nav-hover-indicator {
+        left: 90px;
+        width: 95px; 
+    }
+    
+    .nav-menu ul li:nth-child(3):hover ~ .nav-hover-indicator {
+        left: 190px;
+        width: 110px;
+    }
+    
+    .nav-menu ul li:nth-child(4):hover ~ .nav-hover-indicator {
+        left: 280px;
+        width: 115px;
+    }
+    
+    .nav-menu ul li:nth-child(5):hover ~ .nav-hover-indicator {
+        left: 392px;
+        width: 100px;
+    }
+}
+
+/* Mobile menu specific styles */
+@media (max-width: 767px) {
+    .nav-menu {
+        background-color: rgba(0, 0, 0, 0.95);
+    }
+    
+    .nav-menu ul {
+        width: 100%;
+    }
+    
+    .nav-menu ul li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .nav-menu ul li a {
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+@media (max-width: 767px) {
+    /* Add padding to the header for mobile view */
+    header nav {
+        padding-top: 2rem;
+        padding-bottom: 2.2rem;
+    }
+    
+    /* Adjust logo spacing */
+    header nav a img {
+        margin-top: 0.5rem;
+    }
+    
+    /* Adjust profile container spacing */
+    header .flex.items-center.gap-10 {
+        margin-top: 0.5rem;
+    }
+}
+
+
+/* ========================================================  navigation bar hover effect fully responsive ends =========================================================================================== */
+
+
+
+/* ========================================================  Profle name hover effect starts  =========================================================================================== */
+
+
+.dropdown-profile-name::before , .dropdown-profile-desc::before {
+    transform: scaleX(0) ;
+    transform-origin: bottom right ;
+}
+.dropdown-profile-name:hover::before , .dropdown-profile-desc:hover::before {
+    transform: scaleX(1) ;
+    transform-origin: bottom left ;
+}
+
+.dropdown-profile-name::before , .dropdown-profile-desc::before {
+    content: " " ;
+    display: block ;
+    position: absolute ;
+    top: 0 ;
+    right: 0 ;
+    bottom: 0 ;
+    left: 0 ;
+    inset: 0 0 0 0 ;
+    background: linear-gradient(45deg, #1E5ACC, #51A7FF); ;
+    z-index:  -1;
+    transition: transform .5s ease;
+}
+.dropdown-profile-name , .dropdown-profile-desc {
+
+    position: relative ;
+    z-index: 10 ; /* if not used then continuous line effect will take up this effect */
+    
+}
+
+/* ========================================================  Profle name hover effect ends  =========================================================================================== */
+
+
+/* ========================================================  Infinite line effect under nav starts  =========================================================================================== */
+
+.infinite-line {
+    position: relative;
+  }
+  
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+  
+.infinite-line::after,
+.infinite-line::before {
+    box-sizing: content-box;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+    /* background-image: conic-gradient(from var(--angle), #9ea2aa 0%, #134cb4 100%); */
+    z-index: -1;
+    padding: 2px;
+    border-radius: 10px;
+    animation: spin 4s linear infinite;
+}
+  
+.infinite-line::before {
+    filter: blur(1rem);
+    opacity: 0.5;
+}
+  
+@keyframes spin {
+    from {
+      --angle: 360deg;
+    }
+    to {
+      --angle: 0deg;
+    }
+}
+
+/* ========================================================  Infinite line effect under nav ends  =========================================================================================== */
+
+
+/* ========================================================  Text gradient Effect starts  =========================================================================================== */
+
+
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+.animated-gradient-text {
+  background: linear-gradient(270deg, #2563eb, #a855f7, #f59e0b, #2563eb);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientAnimation 6s ease infinite;
+}
+
+
+/* ========================================================  Text gradient Effect ends  =========================================================================================== */
+
+
+/* ========================================================  Text animation Effect starts  =========================================================================================== */
+
+.animated-tagline {
+  position: relative;
+  color: rgba(203, 213, 225, 0.9);
+  text-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+  display: flex;
+  flex-wrap: wrap;
+  
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+.rotating-text-wrapper {
+  display: inline-flex;
+  align-items: center;
+  height: 1.5em;
+  line-height: 1.5em;
+  position: relative;
+  overflow: hidden; /* Hide text overflow */
+}
+
+.rotating-text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: #60a5fa;
+  margin-left: 2px;
+  animation: blink 0.8s infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0;
+  }
+}
+
+/* For mobile responsiveness */
+@media (max-width: 640px) {
+  .animated-tagline {
+    justify-content: center;
+  }
+}
+
+
+/* ========================================================  Text animation Effect ends =========================================================================================== */
+
+
+/* ========================================================  Spiders animation Effect starts  =========================================================================================== */
+
+/* Base styles */
+.spider-collection {
+  position: absolute;
+  right: 2rem;
+  top: 8rem;
+  width: 12rem;
+  height: 30rem;
+  z-index: 40;
+  pointer-events: none;
+}
+
+.hanging-spider {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 5rem;
+  pointer-events: auto;
+  transition: transform 0.8s ease-in-out;
+}
+
+#spider1 {
+  right: 10rem;
+  height: 18rem;
+}
+
+#spider2 {
+  left: 4rem;
+  right: 2rem;
+  height: 22rem;
+}
+
+#spider3 {
+  right: 5rem;
+  height: 15rem;
+}
+
+.web-thread {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color: rgba(220, 220, 220, 0.7);
+  transform-origin: top center;
+}
+
+.spider-image {
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Specific spider styles */
+.yellow-spider,
+.dark-spider,
+.navy-spider {
+  top: calc(100% - 4rem);
+  bottom: 0;
+  background-image: url('images/bug/s1.png'); /* Default image */
+}
+
+.dark-spider {
+  background-image: url('images/bug/s2.png');
+}
+.navy-spider {
+  background-image: url('images/bug/s4.png');
+}
+
+/* Thread wobble effect */
+.hanging-spider:hover .web-thread {
+  animation: thread-wobble 0.4s ease-in-out 2;
+}
+
+@keyframes thread-wobble {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-4deg); }
+  75% { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Animate spider fall */
+.hanging-spider.fall {
+  transform: translateY(100vh);
+  transition: transform 2s ease-in-out;
+}
+
+.hanging-spider.fall-complete {
+  transform: translateY(150vh);
+  transition: transform 2s ease-in-out;
+}
+
+.fall-hover {
+  animation: fullFall 2s ease-in-out forwards;
+}
+
+.climb-hover {
+  animation: climbUp 2s ease-in-out forwards;
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(0px);
+  }
+  80% {
+    transform: translateY(100vh);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(150vh);
+    opacity: 0;
+  }
+}
+
+/* Large screen hover effect */
+@media (min-width: 1025px) {
+  .hanging-spider:hover {
+    transform: translateY(10rem);
+  }
+
+  .hanging-spider:hover .spider-image {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px #60a5fa);
+  }
+}
+
+/* Medium and Small screen: hide spiders by falling */
+@media (max-width: 1024px) {
+  .spider-collection {
+    pointer-events: none;
+    top: 5rem;
+    right: 0.5rem;
+    width: 10rem;
+    height: 22rem;
+    overflow: hidden;
+  }
+
+  .hanging-spider {
+    width: 4rem;
+  }
+
+  .spider-image {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  #spider1 {
+    right: 6rem;
+    height: 16rem;
+  }
+
+  #spider2 {
+    left: 1.5rem;
+    right: auto;
+    height: 18rem;
+  }
+
+  #spider3 {
+    right: 3rem;
+    height: 14rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .spider-collection {
+    top: 4rem;
+    width: 8rem;
+    height: 20rem;
+  }
+
+  .hanging-spider {
+    width: 3.5rem;
+  }
+
+  .spider-image {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+
+  #spider1 {
+    right: 3rem;
+    height: 14rem;
+  }
+
+  #spider2 {
+    left: 1rem;
+    right: auto;
+    height: 16rem;
+  }
+
+  #spider3 {
+    right: 1.5rem;
+    height: 12rem;
+  }
+}
+@keyframes fullFall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(150vh);
+    opacity: 0;
+  }
+}
+
+@keyframes climbUp {
+  0% {
+    transform: translateY(150vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fall-mobile {
+  animation: fullFall 2s ease-out forwards;
+}
+
+.climb-up {
+  animation: climbUp 2s ease-in forwards;
+}
+
+/* ========================================================  Spider animation Effect ends =========================================================================================== */
+.btn-effect {
+  position: relative;
+  background: #333 ; /* matching theme gradient */
+  transition: background 1s ease-in-out, color 0.4s ease-in-out;
+}
+
+.btn-effect::before {
+  content: "";
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  transition: width 0.5s ease, height 0.5s ease;
+  z-index: 0;
+}
+
+.btn-effect:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-effect span {
+  position: relative;
+  z-index: 10;
+}
+

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Remixicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.css">
+    <!-- Tailwind CSS -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <title>Responsive Navbar with Search & Profile Menu</title>
+</head>
+<body class="font-sans bg-black antialiased">
+    <!-- HEADER -->
+
+    <!-- ---------------------------------------------------------Navigation bar starts here------------------------------------------------------------------------------------ -->
+    <header class="fixed w-full top-0 left-0 bg-black z-50 shadow-xl">
+        <div class="infinite-line bg-black">
+            <nav class="flex justify-between items-center h-14 md:h-20 px-6 max-w-7xl mx-auto text-white">
+                <a href="#" class="inline-block transition-transform duration-300 hover:scale-105">
+                    <img src="images/Logo/logo.png" alt="logo-image"class="w-[100px] h-auto transition-all duration-300 hover:drop-shadow-[0_0_20px_#1E40AF]">
+                </a>
+                
+
+                <!-- Navigation Menu -->
+                <div class="nav-menu fixed top-[-100%] left-0 w-full md:relative md:top-0 md:w-auto md:bg-transparent md:shadow-none pt-16 md:pt-0 pb-10 md:pb-0 transition-all duration-300 z-[60] bg-black bg-opacity-95" id="nav-menu">
+                    <ul class="flex flex-col md:flex-row items-center md:items-stretch md:ml-auto relative">
+                        <li class="w-full md:w-auto text-center"><a href="#" class="text-white font-semibold relative inline-block px-5 py-4 md:py-2 z-10 w-full hover:bg-blue-800 md:hover:bg-transparent transition-colors">Home</a></li>
+                        <li class="w-full md:w-auto text-center"><a href="#" class="text-white font-semibold relative inline-block px-5 py-4 md:py-2 z-10 w-full hover:bg-blue-800 md:hover:bg-transparent transition-colors">About Us</a></li>
+                        <li class="w-full md:w-auto text-center"><a href="#" class="text-white font-semibold relative inline-block px-5 py-4 md:py-2 z-10 w-full hover:bg-blue-800 md:hover:bg-transparent transition-colors">Services</a></li>
+                        <li class="w-full md:w-auto text-center"><a href="#" class="text-white font-semibold relative inline-block px-5 py-4 md:py-2 z-10 w-full hover:bg-blue-800 md:hover:bg-transparent transition-colors">Products</a></li>
+                        <li class="w-full md:w-auto text-center"><a href="#" class="text-white font-semibold relative inline-block px-5 py-4 md:py-2 z-10 w-full hover:bg-blue-800 md:hover:bg-transparent transition-colors">Contact</a></li>
+                        
+                        <!-- The span that will change on hover (only shown in md screen and up) -->
+                        <span class="nav-hover-indicator hidden md:block absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-blue-800 to-blue-500 rounded transition-all duration-500"></span>
+                    </ul>
+                            
+                    <!-- Close button (visible only on mobile) -->
+                    <div class="absolute top-4 right-6 text-2xl cursor-pointer md:hidden text-white" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-10">
+                    <!-- Search button -->
+                    <div class="text-2xl cursor-pointer hover:text-indigo-500 hover:font-bold hover:scale-150 transition-transform duration-500" id="search-btn">
+                        <i class="ri-search-line"></i>
+                    </div>
+                    
+                    <!-- Dropdown -->
+                    <div class="relative" id="dropdown">
+                        <div class="flex items-center cursor-pointer">
+                            <div class="hidden sm:block mr-4">
+                                <h3 class="dropdown-profile-name text-base font-semibold">Nezuko</h3>
+                                <span class="dropdown-profile-desc text-sm font-medium text-right">Developer</span>
+                            </div>
+                            
+                            <div class="relative w-[52px] h-[52px] bg-blue-500 rounded-full overflow-hidden flex justify-center items-center transition-transform duration-300 hover:scale-125 ring-2 ring-indigo-500 ring-offset-2 ring-offset-black">
+                                <img src="images/Profile/1350159.jpeg" alt="Profile image" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        
+                        <div class="dropdown-list absolute top-[4.5rem] right-0 bg-slate-900 shadow-lg py-4 px-5 ring-blue-500 rounded grid gap-1 z-10 transform translate-y-[-12px] opacity-0 pointer-events-none transition-all duration-300">
+                            <a href="#" class="flex items-center gap-4 py-1 px-2 pr-6 rounded text-white hover:bg-slate-700 transition-colors">
+                                <i class="ri-user-line text-base"></i>
+                                <span class="text-sm font-medium">Profile</span>
+                            </a>
+                            
+                            <a href="#" class="flex items-center gap-4 py-1 px-2 pr-6 rounded text-white hover:bg-slate-700 transition-colors">
+                                <i class="ri-time-line text-base"></i>
+                                <span class="text-sm font-medium">Activity</span>
+                            </a>
+                            
+                            <a href="#" class="flex items-center gap-4 py-1 px-2 pr-6 rounded text-white hover:bg-slate-700 transition-colors">
+                                <i class="ri-bookmark-line text-base"></i>
+                                <span class="text-sm font-medium">Saved</span>
+                            </a>
+                            
+                            <a href="#" class="flex items-center gap-4 py-1 px-2 pr-6 rounded text-white hover:bg-slate-700 transition-colors">
+                                <i class="ri-settings-3-line text-base"></i>
+                                <span class="text-sm font-medium">Settings</span>
+                            </a>
+                            
+                            <a href="#" class="flex items-center gap-4 py-1 px-2 pr-6 rounded text-white hover:bg-slate-700 transition-colors">
+                                <i class="ri-logout-box-r-line text-base"></i>
+                                <span class="text-sm font-medium">Logout</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Toggle button -->
+                    <div class="text-2xl cursor-pointer md:hidden" id="nav-toggle">
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Search option -->
+    <div class="search fixed inset-0 bg-slate-900/10 backdrop-blur-lg z-[1000] opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out" id="search">
+        <div class="relative w-full h-full">
+            <!-- Close button -->
+            <div class="flex justify-center items-center">
+                <button type="button" id="search-close" class="absolute top-8 right-8 text-slate-800 cursor-pointer z-[1001]">
+                    <div class="h-11 w-11 flex justify-center items-center rounded-full bg-white shadow-2xl">
+                        <i class="ri-close-line block leading-none text-3xl"></i>
+                    </div>
+                </button>
+            </div>
+    
+            <!-- Search form -->
+            <form class="search-form max-w-xl mx-auto mt-40 md:mt-48 px-6 flex items-center gap-2 bg-white rounded-lg shadow-lg transform -translate-y-4 transition-transform duration-300 ease-in-out">
+                <i class="ri-search-line text-2xl text-slate-700"></i>
+                <input type="search" placeholder="What are you looking for?" class="w-full py-4 px-2 bg-transparent text-slate-700 outline-none">
+            </form>
+        </div>
+    </div>
+    
+    <!-----------------------------------------------------------Navigation bar ended here------------------------------------------------------------------------------------ -->
+      
+    <main class="min-h-screen pt-18 pb-16 bg-gradient-to-b from-black to-slate-900 text-white">
+        <!-- Hero section with text and image aligned -->
+        <div class="w-full px-6 md:px-10">
+            <div class="text-center lg:text-left">
+              <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-3 leading-tight sm:leading-snug animated-gradient-text">
+                Welcome to CryBug!!!...
+              </h1>
+              <p class="animated-tagline text-base sm:text-lg md:text-xl lg:text-2xl font-light tracking-wide mb-5 flex flex-col sm:flex-row items-center sm:items-start lg:items-center justify-center lg:justify-start gap-2 sm:gap-4 text-center lg:text-left">
+                <span>An Advanced System to Help You</span>
+                <span class="rotating-text-wrapper">
+                  <span class="rotating-text text-blue-400 font-medium"></span>
+                  <span class="cursor"></span>
+                </span>
+              </p>
+              
+              
+            </div>
+          </div>
+    
+            <!-- Hero Image Below Text -->
+            <div class="w-full flex flex-col lg:flex-row items-center justify-center px-6 pb-10 gap-10 relative">
+
+                <!-- Left: Hero Image -->
+                <div class="w-full lg:w-1/2 flex justify-center">
+                  <img src="/images/hero/hero-image.png" alt="bug-body-image"
+                       class="w-full max-w-md lg:max-w-xl h-auto object-contain transition-all duration-500 hover:scale-105 hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                </div>
+              
+                <!-- Right: Text + Buttons -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left -mt-8">
+              
+                  <h2 class="text-3xl font-bold mb-3">Ready to squash some bugs?</h2>
+              
+                  <!-- Motivational Lines -->
+                  <p class="text-gray-400 mb-1">Streamline your workflow. Start now.</p>
+                  <p class="text-gray-400 mb-1">Track smarter, not harder.</p>
+                  <p class="text-gray-400 mb-1">Your project control center awaits.</p>
+                  <p class="text-gray-400 mb-6">It's fast, free, and secure.</p>
+              
+                  <!-- Fixed Centered Buttons - Added items-center and justify-center to the flex container -->
+                  <div class="w-full flex justify-center lg:justify-start">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                      <div class="btn-effect inline-flex px-8 py-2.5 text-white font-medium rounded-xl overflow-hidden">
+                        <a href="/login"><span class="relative z-10">Login</span></a>
+                      </div>
+              
+                      <div class="btn-effect inline-flex px-8 py-2.5 text-white font-medium rounded-xl overflow-hidden">
+                        <a href="/sign-in"><span class="relative z-10">Sign in</span></a>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <p class="mt-5 text-sm text-gray-400">
+                    By continuing, you agree to our <a href="#" class="underline hover:text-blue-500">Terms</a>.
+                  </p>
+              
+                </div>
+              </div>
+              
+              
+
+        
+    
+        <!-- Spider collection -->
+        <div class="spider-collection">
+            <div class="hanging-spider" id="spider1">
+                <div class="web-thread"></div>
+                <div class="spider-image yellow-spider"></div>
+            </div>
+            
+            <div class="hanging-spider" id="spider2">
+                <div class="web-thread"></div>
+                <div class="spider-image dark-spider"></div>
+            </div>
+            
+            <div class="hanging-spider" id="spider3">
+                <div class="web-thread"></div>
+                <div class="spider-image navy-spider"></div>
+            </div>
+        </div>
+
+
+
+    </main>
+    
+
+    <!-- Add this HTML to your existing page before the closing </body> tag -->
+
+    
+    
+    
+    
+    
+
+</body>
+</html>
